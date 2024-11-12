@@ -6,17 +6,13 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:59:02 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/11/12 23:13:19 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/11/12 23:29:09 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-int	print_char(char c)
-{
-	return (write(1, &c, 1));
-}
 
 int	print_str(char *s)
 {
@@ -49,14 +45,14 @@ int	ft_printf(const char *str, ...)
 		{
 			i++;
 			if (str[i] == 'c')
-				result_len += print_char(va_arg(args, int));
+				result_len += ft_print_char(va_arg(args, int));
 			else if (str[i] == 's')
 				result_len += print_str(va_arg(args, char *));
 			else if (str[i] == 'p')
 				result_len += ft_print_ptr(va_arg(args, void *));
 		}
 		else
-			result_len += print_char(str[i]);
+			result_len += ft_print_char(str[i]);
 		i++;
 	}
 	va_end(args);
