@@ -6,28 +6,11 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:59:02 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/11/12 23:29:09 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/11/12 23:33:57 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-
-
-int	print_str(char *s)
-{
-	int	i;
-
-	if (!s)
-		s = "(null)";
-	i = 0;
-	while (s[i] != '\0')
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
-}
 
 int	ft_printf(const char *str, ...)
 {
@@ -47,7 +30,7 @@ int	ft_printf(const char *str, ...)
 			if (str[i] == 'c')
 				result_len += ft_print_char(va_arg(args, int));
 			else if (str[i] == 's')
-				result_len += print_str(va_arg(args, char *));
+				result_len += ft_print_str(va_arg(args, char *));
 			else if (str[i] == 'p')
 				result_len += ft_print_ptr(va_arg(args, void *));
 		}

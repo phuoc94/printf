@@ -6,14 +6,14 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 12:52:44 by phuocngu          #+#    #+#              #
-#    Updated: 2024/11/12 23:30:15 by phuocngu         ###   ########.fr        #
+#    Updated: 2024/11/12 23:33:31 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS += -Wall -Wextra -Werror
 
-SRC_FILES = ft_printf.c ft_print_ptr.c ft_print_char.c
+SRC_FILES = ft_printf.c ft_print_ptr.c ft_print_char.c ft_print_str.c
 
 OBJS = $(SRC_FILES:.c=.o)
 

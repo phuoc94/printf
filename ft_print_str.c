@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 22:12:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/11/12 23:33:16 by phuocngu         ###   ########.fr       */
+/*   Created: 2024/11/12 23:32:21 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/11/12 23:35:25 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include <unistd.h>
 
-# include <stdarg.h>
-# include <unistd.h>
+int	ft_print_str(char *s)
+{
+	int	i;
 
-int	ft_printf(const char *str, ...);
-int	ft_print_char(char c);
-int	ft_print_ptr(void *ptr);
-int	ft_print_str(char *s);
-
-#endif
+	if (!s)
+		s = "(null)";
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (i);
+}
