@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 22:12:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/11/12 23:13:30 by phuocngu         ###   ########.fr       */
+/*   Created: 2024/11/12 23:10:51 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/11/12 23:25:06 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include <unistd.h>
 
-# include <stdarg.h>
-# include <unistd.h>
+int	print_hex(unsigned long n)
+{
+	char	*hex;
+	int		len;
 
-int	ft_printf(const char *str, ...);
-int	ft_print_ptr(void *ptr);
+	hex = "0123456789abcdef";
+	len = 0;
+	if (n >= 16)
+		len += print_hex(n / 16);
+	len += write(1, &hex[n % 16], 1);
+	return (len);
+}
 
-#endif
+int	ft_print_ptr(void *ptr)
+{
+	int len;
+	len = 0;
+
+	len += write(1, "0x", 2);
+	len += print_hex((unsigned long)ptr);
+	return (len);
+}

@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:59:02 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/11/12 22:55:34 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/11/12 23:13:19 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	ft_printf(const char *str, ...)
 
 	i = 0;
 	result_len = 0;
+
 	va_start(args, str);
 	while (str[i] != '\0')
 	{
@@ -51,6 +52,8 @@ int	ft_printf(const char *str, ...)
 				result_len += print_char(va_arg(args, int));
 			else if (str[i] == 's')
 				result_len += print_str(va_arg(args, char *));
+			else if (str[i] == 'p')
+				result_len += ft_print_ptr(va_arg(args, void *));
 		}
 		else
 			result_len += print_char(str[i]);
