@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 22:12:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/11/13 18:50:37 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/11/13 19:01:16 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	ft_print_char(char c);
 int	ft_print_ptr(void *ptr);
 int	ft_print_str(char *s);
 int	print_hex(unsigned long n, int uppercase);
-int ft_print_nbr(long n);
+int	ft_print_nbr(long n);
 
 #endif
