@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:59:02 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/11/12 23:33:57 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:56:09 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,18 @@ int	ft_printf(const char *str, ...)
 				result_len += ft_print_str(va_arg(args, char *));
 			else if (str[i] == 'p')
 				result_len += ft_print_ptr(va_arg(args, void *));
+			else if (str[i] == 'd' || str[i] == 'i')
+				result_len += 0;
+			else if (str[i] == 'u')
+				result_len += 0;
+			else if (str[i] == 'x')
+				result_len += 0;
+			else if (str[i] == 'X')
+				result_len += 0;
+			else if (str[i] == '%')
+				result_len += 0;
+			else
+				result_len += ft_print_char(str[i]);
 		}
 		else
 			result_len += ft_print_char(str[i]);
