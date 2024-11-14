@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:59:02 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/11/13 19:27:19 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:49:59 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	ft_printf(const char *str, ...)
 	int		i;
 	va_list	args;
 	int		result_len;
+	int		result;
 
 	i = 0;
 	result_len = 0;
@@ -47,11 +48,14 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%' && str[i + 1] != '\0')
 		{
+			result = handle_format(str[i + 1], &args);
 			i++;
-			result_len += handle_format(str[i], &args);
 		}
 		else
-			result_len += ft_print_char(str[i]);
+			result = ft_print_char(str[i]);
+		if (result == -1)
+			return (result);
+		result_len += result;
 		i++;
 	}
 	va_end(args);

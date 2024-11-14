@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:30:41 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/11/13 19:59:28 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:56:56 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,10 @@ int	main(void)
 	res1 = ft_printf("Hex uppercase max: %X\n", UINT_MAX);
 	res2 = printf("Hex uppercase max: %X\n", UINT_MAX);
 	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("Pointer 0: %p\n", 0);
+	res2 = printf("Pointer 0: (nil)\n");
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
 	return (0);
 }
