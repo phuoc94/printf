@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:30:41 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/11/14 17:56:56 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:04:31 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,46 @@ int	main(void)
 
 	res1 = ft_printf("Pointer 0: %p\n", 0);
 	res2 = printf("Pointer 0: (nil)\n");
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("Character: %c\n", 0);
+	res2 = printf("Character: %c\n", 0);
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("String: %s\n", NULL);
+	res2 = printf("String: %s\n", NULL);
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("String: %s\n", "");
+	res2 = printf("String: %s\n", "");
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("Pointer: %p\n", NULL);
+	res2 = printf("Pointer: %p\n", NULL);
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("Decimal: %d\n", 0);
+	res2 = printf("Decimal: %d\n", 0);
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("Integer: %i\n", 0);
+	res2 = printf("Integer: %i\n", 0);
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("Unsigned: %u\n", 0U);
+	res2 = printf("Unsigned: %u\n", 0U);
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("Hex (lowercase): %x\n", 0);
+	res2 = printf("Hex (lowercase): %x\n", 0);
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("Hex (uppercase): %X\n", 0);
+	res2 = printf("Hex (uppercase): %X\n", 0);
+	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
+
+	res1 = ft_printf("Percent sign: %%\n");
+	res2 = printf("Percent sign: %%\n");
 	printf(res1 == res2 ? GREEN "OK\n\n" RESET : RED "KO\n\n" RESET);
 
 	return (0);
